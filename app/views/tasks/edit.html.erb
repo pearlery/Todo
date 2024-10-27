@@ -1,0 +1,9 @@
+<div>
+  <h1 class="EditingTask">Editing Task</h1>
+
+  <div id="<%= dom_id @task %>" class="editing-form">
+
+    <%= render "form", task: @task %>
+    <%= link_to "🗑", tasks_path %>
+  </div>
+</div>
