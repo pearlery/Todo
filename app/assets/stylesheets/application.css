@@ -1,14 +1,9 @@
-turbo-frame {
-    border: 1px solid lightblue;
-    border-radius: 5px;
-    padding: 0.1em 1em;
-    margin: 1em 0;
-  }
+
 body{
   background-color: rgb(245, 245, 245);
 }
 .todoshead{
-  color: rgb(255, 0, 179);
+  color: rgb(255, 23, 236);
   font-size: 4em;
   font-weight: 300;
   padding: 40px;
@@ -43,18 +38,23 @@ body{
 .Tasks_Category h1 {
   padding: 10px ;
   margin: 10px;
+  font-size: 30px;
 }
 .Tasks_Category li{
   text-align: center;
  
 }
 
+
+
 .EditingTask{
-  color: rgb(216, 90, 178);
-  font-size: 4em;
-  font-weight: 300;
-  padding: 40px;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  /* font-weight: 300; */
+  padding: 10px 20px;
   text-align: center;
+  background-color: rgb(228, 228, 228);
+  border-radius: 20px;
 }
 
 .editing-form{
@@ -64,3 +64,117 @@ body{
 .editing-form Back{
   color: aqua;
 }
+
+
+.block {
+  background-color: #ffffff;
+  margin: 10px 10%;
+  padding: 0px 20px;
+  border-radius: 40px;
+  box-shadow: #dfdfdf 4px 3px 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.block-child{
+  margin: 6px 0 ;
+  display:inline-flex;
+}
+
+
+.blocky-edit{
+  color:  rgb(25, 98, 255);
+  background-color: rgb(248, 248, 248);
+  padding: 2px 6px;
+  border-radius: 50px;
+}
+.block-del{
+  margin-left: 30px;
+  margin-right: 1px;
+  background-color: rgb(248, 248, 248);
+  padding: px ;
+  border-radius: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.category{
+  text-align: center;
+
+}
+
+.category-head{
+  margin-bottom: 40px;
+}
+
+.cate-h1{
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin: 30px 0 40px 0;
+  font-size: 3rem;
+}
+.category-add{
+  color: #000000;
+  background-color: rgb(255, 255, 255);
+  margin:20px ;
+  padding: 10px 40px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 400;
+  box-shadow: #c5c5c5 2px 10px 15px;
+
+
+  }
+
+
+
+.category-back{
+  color: #ffffff;
+  background-color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 400;
+  margin:10px ;
+
+
+}
+.category-content{
+  background-color: #ffffff;
+  margin: 10px 40%;
+  padding: 10px 20px;
+  border-radius: 40px;
+  box-shadow: #c5c5c5 2px 10px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.category-frame{
+  display:inline-flex;
+  /* justify-content:space-evenly; */
+
+
+}
+.category-edit{
+  color:  rgb(25, 98, 255);
+  background-color: rgb(248, 248, 248);
+  padding: 2px 6px;
+  border-radius: 50px;
+  box-shadow: #c5c5c5 2px 4px 5px;
+}
+.category-del{
+  margin-left: 20px;
+  margin-right: 10px;
+  background-color: rgb(248, 248, 248);
+  padding: 2px 3px;
+  border-radius: 50px;
+  box-shadow: #c5c5c5 2px 4px 5px;
+}
+

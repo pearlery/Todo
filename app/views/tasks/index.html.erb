@@ -1,47 +1,38 @@
-<% if notice.present? %>
-  <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice">
-    <%= notice %>
-  </p>
-<% end %>
-
+<!-- app/views/tasks/index.html.erb -->
 <h1 class="todoshead"> 𝐓✿𝐃𝐎𝐒 🍃 </h1>
 
 <div class="frame">
   <div id="tasks">
     <div class="tasks-form">
       <%= render "form", task: @task %>
-      <h1>𝐍𝐚𝐦𝐞 ✎ ̼</h1>
+      <h1>𝐍𝐚𝐦𝐞 ✎</h1>
 
       <div>
         <% if @tasks.present? %>
-          <%= render @tasks %>
+          <!-- Wrap tasks in a Turbo Frame -->
+          <turbo-frame id="tasks_list">
+            <%= render @tasks %>
+          </turbo-frame>
         <% else %>
           <p>No tasks available</p>
         <% end %>
+      </div>
     </div>
   </div>
 
-  <div class= "Tasks_Category">
-      <h1>Tasks by Category </h1>
-      <% @categories.each do |category| %>
-        <h2><%= category.name %></h2>
-        <ul>
+  <div class="Tasks_Category">
+    <h1>Tasks by Category</h1>
+    <% @categories.each do |category| %>
+      <h2><%= category.name %></h2>
+      <ul>
+        <turbo-frame id="category_<%= category.id %>_tasks">
           <% category.tasks.each do |task| %>
             <li>
-              <%= form_with(model: task, class:"text-lg inline-block my-3 w-72") do |form| %>
-                <%= form.check_box :completed,
-                                  data: {
-                                    id: task.id,
-                                    action: "tasks#toggle"
-                                  },
-                                  class: "mr-2 align-middle bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-5 w-5 rounded checked:bg-green-500" %>
-                <%= task.description %>
-              <% end %>   
-              <%= link_to "Edit", edit_task_path(task)%>
-              <%= button_to "🗑️", task_path(task), method: :delete %>
+              <%= render "task", task: task %>
             </li>
           <% end %>
-        </ul>
-      <% end %>
-    </div>
+        </turbo-frame>
+      </ul>
+    <% end %>
+  </div>
 </div>

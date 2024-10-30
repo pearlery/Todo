@@ -1,9 +1,7 @@
-<div>
+<turbo-frame id="<%= dom_id(@task) %>">
   <h1 class="EditingTask">Editing Task</h1>
-
-  <div id="<%= dom_id @task %>" class="editing-form">
-
+  <div id="<%= dom_id(@task) %>" class="editing-form">
     <%= render "form", task: @task %>
-    <%= link_to "Back", tasks_path %>
+    <%= link_to "Back", tasks_path, class: "btn" %>
   </div>
-</div>
+</turbo-frame>
