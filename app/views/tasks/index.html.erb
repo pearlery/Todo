@@ -4,21 +4,44 @@
   </p>
 <% end %>
 
-<h1 class="todoshead">TODOS</h1>
+<h1 class="todoshead"> 𝐓✿𝐃𝐎𝐒 🍃 </h1>
 
+<div class="frame">
+  <div id="tasks">
+    <div class="tasks-form">
+      <%= render "form", task: @task %>
+      <h1>𝐍𝐚𝐦𝐞 ✎ ̼</h1>
 
-<div id="tasks">
-  <div class="tasks-form">
-    <%= render "form", task: @task %>
+      <div>
+        <% if @tasks.present? %>
+          <%= render @tasks %>
+        <% else %>
+          <p>No tasks available</p>
+        <% end %>
+    </div>
   </div>
-  <h1 class="tasks">Name</h1>
 
-  <div class="px-5">
-    <% if @tasks.present? %>
-      <%= render @tasks %>
-    <% else %>
-      <p>No tasks available</p>
-    <% end %>
-  </div>
+  <div class= "Tasks_Category">
+      <h1>Tasks by Category </h1>
+      <% @categories.each do |category| %>
+        <h2><%= category.name %></h2>
+        <ul>
+          <% category.tasks.each do |task| %>
+            <li>
+              <%= form_with(model: task, class:"text-lg inline-block my-3 w-72") do |form| %>
+                <%= form.check_box :completed,
+                                  data: {
+                                    id: task.id,
+                                    action: "tasks#toggle"
+                                  },
+                                  class: "mr-2 align-middle bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-5 w-5 rounded checked:bg-green-500" %>
+                <%= task.description %>
+              <% end %>   
+              <%= link_to "Edit", edit_task_path(task)%>
+              <%= button_to "🗑️", task_path(task), method: :delete %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
 </div>
-

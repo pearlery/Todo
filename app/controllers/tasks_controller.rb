@@ -1,7 +1,8 @@
 class TasksController < ApplicationController
   def index
+    @categories = Category.all
+    @tasks = Task.all
     @task = Task.new
-    @tasks = Task.all # Fetch all tasks to display
   end
 
   def create
@@ -16,9 +17,8 @@ class TasksController < ApplicationController
 
   def toggle
     @task = Task.find(params[:id])
-    @task.update(completed: params[:completed])
-  
-    render json: { message: "Success" }
+    @task.update(completed: !@task.completed)
+    render json: { message: "Success", completed: @task.completed }
   end
   
   def edit
@@ -46,7 +46,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:description)
+    params.require(:task).permit(:description, :category_id)
   end
 end
 

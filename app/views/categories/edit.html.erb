@@ -1,0 +1,11 @@
+<h1>Edit Category</h1>
+
+<%= render "form", category: @category %>
+<%= link_to "Back", categories_path, class: "btn py-2 ml-2 bg-blue-600 text-white" %>
+
+<%= form_with model: @category, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.submit 'Update Category', class: "btn py-2 ml-2 bg-blue-600 text-white"  %>
+<% end %>
+

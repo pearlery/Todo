@@ -1,0 +1,10 @@
+<h1><%= @category.name %> Tasks</h1>
+<ul>
+  <% @category.tasks.each do |task| %>
+    <li>
+      <%= task.name %>
+      <%= link_to '✅', complete_task_path(task), method: :get %>
+      <%= link_to '🗑️', task_path(task), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>

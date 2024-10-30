@@ -8,32 +8,49 @@ body{
   background-color: rgb(245, 245, 245);
 }
 .todoshead{
-  color: rgb(39, 71, 255);
+  color: rgb(255, 0, 179);
   font-size: 4em;
   font-weight: 300;
   padding: 40px;
   text-align: center;
 }
 
-.tasks-form{
-  text-align: center;
 
-}
-#tasks {
+
+.tasks-form{
+
   padding: 10px 10px 30px 10px;
   margin: 10px 35%;
   text-align: center;
   background-color: rgb(255, 255, 255);
   border-radius: 20px;
   box-shadow: 2px 2px 15px  #dddddd;
+
 }
+.frame{
+  display: flexbox;
 
-#tasks form{
-
+  
+}
+.Tasks_Category{
+  padding: 10px 10px 30px 10px;
+  margin: 10px 35% 100px 35%;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  box-shadow: 2px 2px 15px  #dddddd;
+}
+.Tasks_Category h1 {
+  padding: 10px ;
+  margin: 10px;
+}
+.Tasks_Category li{
+  text-align: center;
+ 
 }
 
 .EditingTask{
-  color: rgb(39, 71, 255);
+  color: rgb(216, 90, 178);
   font-size: 4em;
   font-weight: 300;
   padding: 40px;
